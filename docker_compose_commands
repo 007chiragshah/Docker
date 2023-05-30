@@ -1,0 +1,18 @@
+docker-compose up -- to up the entire application. with -d flag it will up in the backend
+docker-compose down -- to down the entire application
+docker-compose create -- To create the container but it will only create the container but not create a network, so if you run this command you will get the warning: the create command is deprecated. Use the up command instead with the --no-start flag
+docker-compose rm -- to remove the container, but before removing make sure the container is not running. It only removes the container but network remains as it is.
+docker-compose start -- to start the stop or created container
+docker-compose stop -- to stop the running container.
+docker-compose ps -- it will list all the docker containers.
+docker-compose pause/unpause -- to pause/unpause the docker-compose containers.
+docker-compose kill -- This will kill the process of the container so the container will get exceeded
+docker-compose port container_name port_num -- To check the port mapping
+docker-compose log -- it will display all the logs, with '-f' flag you will get the logs as it starts coming 'docker-compose -f'
+docker-compose exec webapp ls -- This will execute the command in the running container. here command is 'ls'
+docker-compose run webapp ls -- This will create the new container and run the ls command in it and then container get exceeded.
+docker-compose restart -- This will restart the container
+docker-compose images -- to list out the images
+docker-compose pull -- It will pull the images of docker-compose
+docker-compose scale service_name=scale_val -- it will create the numb of service as scale_val and you can scale multiple app by space seperated ex -- docker-compose scale web_app1=4 webapp2=2 -- so it will create total 6 containers.
+docker-compose top -- it will list out the running processes
