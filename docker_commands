@@ -1,0 +1,39 @@
+docker pull image_name -- By using this command the image will not run it is just downloaded to the local storage from the docker hub.
+docker ps -- This command will list out all the running containers and some basic information about them.
+docker ps -a -- This command will list out all the containers which are not running with some basic information about it
+docker stop container_name/id -- This command will stop the running container.
+docker start container_name/id -- This will start the container which is existed.
+docker rm container_name/id -- This command will remove the container permanently
+docker images -- This command will list out all the images.
+docker rmi image_name/id -- This command will remove the image permanently.
+docker run -it ubuntu /bin/bash
+docker container ls -aq -- This will list out the id of all the containers
+docker container rm $(docker container ls -aq) -- This will remove all the containers together
+docker container inspect container_name/id -- this will use to check all the details related container like path,network,ip,name,etc
+docker container log container_name/id -- To check the container logs
+docker container stats -- To check the CPU/Memory etc information of the containers
+docker container top container_name/id -- to check the process of container
+docker container rename container_name/id new_name -- It is used to rename the container name
+docker container wait container_name/id -- This will wait container to stop and once it stops it will give you the exit status of that container
+docker container kill container_name/id -- This will kill the container
+docker container pause container_name/id -- This will pause the container, same verify by checking the status and once it pause you can not access it from browser
+docker container unpause container_name/id -- it's vice versa of docker pause
+docker container praun -f -- This will delete all the containers which are not in use, -f is used to give by default yes to permission
+docker container port container_name/id -- it will give you the information of the port of that particular container.
+docker create container image_name -- It will create the container only and will see its status as created
+docker container diff container_id/name -- It will show what changes happened in that container c= Some file created, A=some file was added,
+d=some file is deleted
+docker container cp source container_id:/dest_path/ -- It will copy the files and folder from the local system to the docker
+docker container export container_id/name > my_container.tar #here you can give any name or path on which you want to save it with '.tar' extension. #here we also can use '-o-' instaed of '>' sign.
+docker image import my_container.tar my_container #here we have imported the tar file and at the end, we have given the name.
+docker image rm -f image_name -- Remove the image
+docker image ls --formaat '{{.ID}} , {{.Repository}} - {{.Tag}}' -- To get the formatted output
+docker container commit --author "Chirag Shah" -m "This is test commit" container_id Image_name -- To get the image from running container
+docker image save image_name > image_name_you_want_to_give.tar #to save the image in local system
+docker image load < image_name.tar #To load the image from local system
+docker image build -t image_name Path_Dockerfile -- This command is to build an image from docker file
+docker image tag image_name account_name/tag_name --To give the tag name
+docker image history jenkins -- to check the history of that image
+docker volume create Vol_name_want_create -- It will create the volume
+docker volume inspect -- to check the details of that volume
+docker run container_name network_name' -- To change the network
