@@ -1,0 +1,14 @@
+docker service scale service_id=scale number -- This will scale up the service as the number of valuses
+docker service create -d -p 8090:80 nginx -- It will map the port 80 to 8090
+docker service create --mode=global alpine ping 8.8.8.8 -- This will create a service on each node and also will be added if you add any node later
+docker service create --replicas=3 --constraint="node.role==manager" alpine ping 8.8.8.8 -- We have added the label in command so it will create the replicas on the manager node only
+docker node update --label-add-"ssd=true" worker01 -- It will crate the label ssd=true on worker01
+docker node update --avaibility=pause node_name -- To update the node avaibility
+'docker secret create name_for_which_secrete_create -' = This command is to create the secrete on the command line, and '-' is used to read the standard i/p.
+docker secret create secrete_name file_name -- This will create the secret from the file.
+docker service create -d --secret dbpass alpine ping 8.8.8.8 -- This command is used to assign the secret to service
+docker stack deploy -c docker-compose.yml wordpressstack -- This command is to run compose file on the entire cluster
+docker stack ls --- To list out all the stacks we have created
+docker stack ps stack_name -- to check the basic details of that stack
+docker stack rm stack_name -- to remoe the perticular stack
+docker stack service stack_name -- To list out the services in the stack
