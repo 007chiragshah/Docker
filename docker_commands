@@ -37,3 +37,4 @@ docker image history jenkins -- to check the history of that image
 docker volume create Vol_name_want_create -- It will create the volume
 docker volume inspect -- to check the details of that volume
 docker run container_name network_name' -- To change the network
+docker container update --publish-add 8080:80 my_container
